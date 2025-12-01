@@ -2,8 +2,16 @@ start_val = 50
 rotations = File.read("1-1.txt").split
 num_zeros = 0
 
+def log message
+  if(ARGV.include?('-v'))    
+    puts message
+  end
+end
+
 
 rotations.each do |line|
+  log "Processing: #{line}, starting #{start_val}"
+
   direction = line[0]
   amount_string = line[1, 2000]
   amount = amount_string.to_i
@@ -28,10 +36,9 @@ rotations.each do |line|
     end
     i = i + 1
   end
-
-  puts "after #{line}: #{start_val}"
+  
+  log "after #{line}: #{start_val}"
 end
  
 puts start_val
-
 puts "password #{num_zeros}"
