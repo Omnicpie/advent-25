@@ -1,5 +1,5 @@
 
-ranges = File.read("preview.txt").split(',')
+ranges = File.read("part1.txt").split(',')
 
 
 
